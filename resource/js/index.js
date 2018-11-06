@@ -1,23 +1,14 @@
 
-// Import libraries we need.
-
- 
-// Import our contract artifacts and turn them into usable abstractions.
-//import Hello_mshk_top from './build/contracts/Hello_mshk_top.json'
- 
-//import { default as contract } from 'truffle-contract'
-// MetaCoin is our usable abstraction, which we'll use through the code below.
-//var Hello_mshk_top = contract(Hello_mshk_top);
-var Hello_mshk_top;
+var Hello_mshk_top_;
 
 $(document).ready(function () {
   var web3Provider = new Web3.providers.HttpProvider("http://192.168.33.88:8545");
   var web3 = new Web3(web3Provider);
 
   $.getJSON ("./build/contracts/Hello_mshk_top.json", function (data,status){  
-      console.log("是是不是成功读到数据"+status);
-      alert(data);
-      Hello_mshk_top = data;
+        console.log("是是不是成功读到数据"+status);
+        console.log("data: ",data.abi);
+        Hello_mshk_top = data;
   });
   //alert(Hello_mshk_top)
   // if (typeof web3 !== 'undefined') {
