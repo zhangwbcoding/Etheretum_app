@@ -3,12 +3,12 @@ pragma solidity ^0.4.23;
 contract Hello_mshk_top {
 
   //say hello mshk.top
-    function say() public pure returns (string) {
+    function say() public view returns (string) {
         return "Hello mshk.top";
     }
 
   //print name
-    function print(string name) public pure returns (string) {
-        return name;
-    }
+//    function print(string name) public pure returns (string) {
+//        return name;
+//    }
 }
