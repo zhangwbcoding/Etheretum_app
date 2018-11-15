@@ -8,7 +8,7 @@ contract Hello_mshk_top {
     }
 
   //print name
-//    function print(string name) public pure returns (string) {
-//        return name;
-//    }
+    function print(string name) public pure returns (string) {
+        return name;
+    }
 }
