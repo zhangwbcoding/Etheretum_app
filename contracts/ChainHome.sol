@@ -1,4 +1,4 @@
-pragma solidity 0.4.24;
+pragma solidity ^0.4.23;
 import "./UtilsLib.sol";
 contract ChainHome{
     address owner;//系统拥有者
