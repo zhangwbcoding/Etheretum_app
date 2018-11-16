@@ -1,10 +1,9 @@
-pragma solidity ^0.4.23;
-pragma solidity 0.4.0;
+pragma solidity ^0.4.24;
 
 library UtilsLib{
     function stringToBytes32(string memory source)constant internal returns(bytes32 result){
         assembly{
-            result :+= mload(add(source,32))
+            result := mload(add(source,32))
         }
     }
     

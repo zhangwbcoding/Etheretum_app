@@ -1,4 +1,4 @@
-pragma solidity ^0.4.23;
+pragma solidity 0.4.24;
 import "./UtilsLib.sol";
 contract ChainHome{
     address owner;//系统拥有者
@@ -55,6 +55,15 @@ contract ChainHome{
         totalAmount=0;
         withdrawAmount=0;
         owner=msg.sender;
+    }
+    //增加权限控制 ，某些方法只能由合约的创建者调用
+    modifier onlyOwner(){
+        if(msg.sender!=owner) throw;
+        _;
+    }
+    //返回合约调用者地址
+    function getOwner() constant returns(address){
+        return owner;
     }
     //注册成为房东
     event NewLandLord(address sender,bool isSuccess,string message);
@@ -253,7 +262,7 @@ contract ChainHome{
             return(false,"");
         }
     }
-    
+    //为租户充值
     event RechargeFoTenantByAddress(address sender,string message);
     function rechargeForTenantByAddress(address _receiver,uint _amount){
         if(isTenantsAlreadyIn(_receiver)){
