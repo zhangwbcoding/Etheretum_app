@@ -1,4 +1,4 @@
-pragma solidity ^0.4.24;
+pragma solidity ^0.4.23;
 
 library UtilsLib{
     function stringToBytes32(string memory source)constant internal returns(bytes32 result){
